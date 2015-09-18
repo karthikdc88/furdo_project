@@ -1,0 +1,11 @@
+<%= javascript_tag do %>
+  function goBack() {
+    window.history.back();
+}
+<% end %>
+
+<h1>New Location</h1>
+
+<%= render 'form' %>
+
+<a href="#" onclick="goBack()">Back</a>

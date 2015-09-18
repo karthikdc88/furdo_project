@@ -1,0 +1,39 @@
+<%= javascript_tag do %>
+  function goBack() {
+    window.history.back();
+}
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Builders Name:</strong>
+  <%= @builder.name %>
+</p>
+
+	<table border=1>
+  <thead>
+    <tr>
+      <th>Location name</th>
+      <th colspan="3">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+        <tr>
+        <td><%= location.location_name %></td>
+        <td><%= link_to 'Show', builder_location_path(location.builder_id, location) %></td>
+        <td><%= link_to 'Edit', edit_builder_location_path(location.builder_id, location) %></td>
+        <td><%= link_to 'Destroy', builder_location_path(location.builder_id, location), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</br>
+
+<%= link_to 'New Location', new_builder_location_path(@builder) %> 
+</br>
+
+<%= link_to 'Edit', edit_builder_path(@builder) %> |
+<a href="#" onclick="goBack()">Back</a>

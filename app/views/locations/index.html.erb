@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project name</th>
+      <th>Builder</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.location_name %></td>
+        <td><%= location.builder_id %></td>
+        <td><%= link_to 'Show', builder_location_path(location.builder_id, location) %></td>
+        <td><%= link_to 'Edit', edit_builder_location_path(location.builder_id, location) %></td>
+        <td><%= link_to 'Destroy',  builder_location_path(location.builder_id, location), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Location', new_builder_location_path %>

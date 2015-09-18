@@ -1,0 +1,33 @@
+<%= javascript_tag do %>
+function goBack() {
+    window.history.back();
+}
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<ul>
+  
+<li>  
+  <strong>Name:</strong>
+  <%= @project.name %>
+</li>
+
+<li>
+  <strong>Bhk:</strong>
+  <%= @project.bhk %>
+</li>
+
+<li>
+  <strong>Location:</strong>
+  <%= @project.location.location_name %>
+</li>
+
+<li><%= image_tag @project.image_1.url %></li>
+<li><%= image_tag @project.image_2.url %></li>
+<li><%= image_tag @project.image_3.url %></li>
+
+</ul>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<a href="#" onclick="goBack()">Back</a>
