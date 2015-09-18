@@ -15,10 +15,28 @@
   <%= @location.builder.name %>
 </p>
 
+<table border=1>
+  <thead>
+    <tr>
+      <th>Project name</th>
+      <th>BHK</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for projects in @location.projects %>
+    <tr>
+    	<td>Project Name :<%= projects.name %></td>
+    	<td>BHK :<%= projects.bhk %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</br>
+
+
 <% for projects in @location.projects %> 
     <ul>
-    	<li>Project Name :<%= projects.name %>
-    	<li>BHK :<%= projects.bhk %>
     	<li><%= image_tag projects.image_1.url %></li>
     	<li><%= image_tag projects.image_2.url %></li>
     	<li><%= image_tag projects.image_3.url %></li>
