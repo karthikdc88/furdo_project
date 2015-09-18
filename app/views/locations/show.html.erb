@@ -3,6 +3,7 @@
     window.history.back();
 }
 <% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -44,5 +45,5 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_builder_location_path %> |
+<%= link_to 'Edit', edit_builder_location_path(@location.builder_id, @location) %> |
 <a href="#" onclick="goBack()">Back</a>
