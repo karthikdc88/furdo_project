@@ -12,7 +12,7 @@ class BuildersController < ApplicationController
   # GET /builders/1
   # GET /builders/1.json
   def show
-    @locations = Builder.find( params[:id]).locations
+    @locations = Builder.find(params[:id]).locations
   end
 
   # GET /builders/new

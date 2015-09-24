@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :locations
   end
 
+  resources :locations
   resources :projects
   
   get '*unmatched_route', to: 'application#not_found'
